@@ -38,13 +38,13 @@ public class caculator {
     public static int addMethod(int a, int b){
         return(a + b);
     }
-    public static int addtru(int a, int b){
+    public static int minusMethod(int a, int b){
         return(a - b);
     }
-    public static int addchia(int a, int b){
+    public static int devideMethod(int a, int b){
         return(a / b);
     }
-    public static int addnhan(int a, int b){
+    public static int multiplyMethod(int a, int b){
         return(a * b);
     }
     
@@ -101,7 +101,7 @@ public class caculator {
                                 case "-":
                                     int so1 = Integer.parseInt(strso1);
                                     int so2 = Integer.parseInt(strso2);
-                                    lblKQ.setText(caculator.addtru(so1, so2)+"");
+                                    lblKQ.setText(caculator.minusMethod(so1, so2)+"");
                                     break;
                                 case "+":
                                     int so3 = Integer.parseInt(strso1);
@@ -111,12 +111,12 @@ public class caculator {
                                 case "/":
                                     int so5 = Integer.parseInt(strso1);
                                     int so6 = Integer.parseInt(strso2);
-                                    lblKQ.setText(caculator.addchia(so5, so6)+"");
+                                    lblKQ.setText(caculator.devideMethod(so5, so6)+"");
                                     break;
                                 case "*":
                                     int so7 = Integer.parseInt(strso1);
                                     int so8 = Integer.parseInt(strso2);
-                                    lblKQ.setText(caculator.addnhan(so7, so8)+"");
+                                    lblKQ.setText(caculator.multiplyMethod(so7, so8)+"");
                                     break;
                                     
                                 default:                                  
