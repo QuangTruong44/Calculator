@@ -41,7 +41,7 @@ public class caculator {
     public static int minusMethod(int a, int b){
         return(a - b);
     }
-    public static int devideMethod(int a, int b){
+    public static int divideMethod(int a, int b){
         return(a / b);
     }
     public static int multiplyMethod(int a, int b){
@@ -111,7 +111,7 @@ public class caculator {
                                 case "/":
                                     int so5 = Integer.parseInt(strso1);
                                     int so6 = Integer.parseInt(strso2);
-                                    lblKQ.setText(caculator.devideMethod(so5, so6)+"");
+                                    lblKQ.setText(caculator.divideMethod(so5, so6)+"");
                                     break;
                                 case "*":
                                     int so7 = Integer.parseInt(strso1);
