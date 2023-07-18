@@ -23,6 +23,7 @@ public class caculator {
     public caculator() {
         myGUI();
     }
+    
     JFrame jMain;
     int x=5,y=5,w=400,h=400;
     JLabel lblKQ;
@@ -32,6 +33,20 @@ public class caculator {
                               "0","+/-","C","+","="};
     JButton[] btns = new JButton[srtButtonName.length];
     String strso1 = "", strso2 = "", strpheptinh = "";
+    
+    
+    public static int addMethod(int a, int b){
+        return(a + b);
+    }
+    public static int addtru(int a, int b){
+        return(a - b);
+    }
+    public static int addchia(int a, int b){
+        return(a / b);
+    }
+    public static int addnhan(int a, int b){
+        return(a * b);
+    }
     
     private void myGUI(){
         jMain = new JFrame();
@@ -86,22 +101,22 @@ public class caculator {
                                 case "-":
                                     int so1 = Integer.parseInt(strso1);
                                     int so2 = Integer.parseInt(strso2);
-                                    lblKQ.setText((so1-so2)+"");
+                                    lblKQ.setText(caculator.addtru(so1, so2)+"");
                                     break;
                                 case "+":
                                     int so3 = Integer.parseInt(strso1);
                                     int so4 = Integer.parseInt(strso2);
-                                    lblKQ.setText((so3+so4)+"");
+                                    lblKQ.setText(caculator.addMethod(so3, so4)+"");
                                     break;
                                 case "/":
                                     int so5 = Integer.parseInt(strso1);
                                     int so6 = Integer.parseInt(strso2);
-                                    lblKQ.setText((so5/so6)+"");
+                                    lblKQ.setText(caculator.addchia(so5, so6)+"");
                                     break;
                                 case "*":
                                     int so7 = Integer.parseInt(strso1);
                                     int so8 = Integer.parseInt(strso2);
-                                    lblKQ.setText((so7*so8)+"");
+                                    lblKQ.setText(caculator.addnhan(so7, so8)+"");
                                     break;
                                     
                                 default:                                  
