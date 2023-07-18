@@ -23,7 +23,7 @@ public class caculator {
     public caculator() {
         myGUI();
     }
-    
+
     JFrame jMain;
     int x=5,y=5,w=400,h=400;
     JLabel lblKQ;
@@ -35,8 +35,31 @@ public class caculator {
     String strso1 = "", strso2 = "", strpheptinh = "";
     
     
-    public static int addMethod(int a, int b){
-        return(a + b);
+    public static String addMethod(String a, String b){
+        String result = new String();
+        int remind = 0; 
+        
+        if (a.length() < b.length()) {
+            while (a.length() < b.length()) {
+                a = '0' + a;
+            }
+        } else if (a.length() > b.length()) {
+            while (a.length() > b.length()) {
+                b = '0' + b;
+            }
+        }
+    
+        for (int i = a.length() - 1; i > -1; i--) {
+            int tmp = (a.charAt(i) - '0') + (b.charAt(i)-'0') + remind;
+            remind = 0; 
+            if (tmp > 10) {
+                tmp = tmp - 10;
+                remind = 1; 
+            }
+            result = tmp + result;
+        }
+        if (remind > 0) result = remind + result;
+        return result;
     }
     public static int minusMethod(int a, int b){
         return(a - b);
@@ -47,6 +70,7 @@ public class caculator {
     public static int multiplyMethod(int a, int b){
         return(a * b);
     }
+    
     
     private void myGUI(){
         jMain = new JFrame();
@@ -104,9 +128,7 @@ public class caculator {
                                     lblKQ.setText(caculator.minusMethod(so1, so2)+"");
                                     break;
                                 case "+":
-                                    int so3 = Integer.parseInt(strso1);
-                                    int so4 = Integer.parseInt(strso2);
-                                    lblKQ.setText(caculator.addMethod(so3, so4)+"");
+                                    lblKQ.setText(caculator.addMethod(strso1, strso2)+"");
                                     break;
                                 case "/":
                                     int so5 = Integer.parseInt(strso1);
@@ -134,4 +156,5 @@ public class caculator {
         jMain.add(pMain);
         jMain.setVisible(true);
     }
+
 }
